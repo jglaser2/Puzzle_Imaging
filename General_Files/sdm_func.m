@@ -1,6 +1,8 @@
 function [ rec_pos ] = sdm_func( W0 )
-%Sparse Diffusion Maps Function
-%Input similarity matrix, and output 3-dimensional reconstructed positions 
+%This function does the SDM (sparse diffusion maps) algorithm to reduce dimensions
+
+%Input similarity matrix (W0), and output 3-dimensional reconstructed
+%positions (rec_pos)
 %See manuscript (Table 1) for further description of all steps
 %Steps listed below correspond to the manuscript
 

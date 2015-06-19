@@ -1,6 +1,18 @@
 function [ C, neur_x_loc, neur_y_loc, neur_z_loc ] = simulate_neur_and_conn_layers( x,y,z,scale,p33,p22,p23 )
-%UNTITLED15 Summary of this function goes here
-%   Detailed explanation goes here
+%This function simulates neuron locations and the connections between
+%neurons given a multiple connection probability functions (two layers)
+
+%Its inputs are:
+%x,y,z - the number of neurons that fit going in the x,y,and z directions
+%scale - how far apart the neurons are from each other in um
+%p33,p22,p23 - probability distributions of connections as a function of distance between neurons
+    %-p33 is the connection probability distribution for one layer (e.g. layer 3), p22 is the
+    %connection probability distribution for another layer (e.g. layer 2),
+    %and p23 is the connection probability distribution between layers (e.g. layers 2 and 3)
+
+%Its outputs are:
+%C - the connectivity matrix
+%neur_x_loc, neur_y_loc, neur_z_loc - x,y, and z coordinates of the neuron locations
 
 n=x*y*z;
 

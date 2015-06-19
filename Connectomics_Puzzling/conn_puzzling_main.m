@@ -1,5 +1,5 @@
-%%This script will do all of the connectomics puzzling applications from
-%%the manuscript. Its sections are:
+%This script will do all of the connectomics puzzling applications from
+%the manuscript. Its sections are:
 %Layer 3: Data for Fig 4C and D, and Plot for Fig 4A
 %Layers 2 and 3: Data for Fig 4C and D, and Plot for Fig 4B
 %Changing sigma parameter: Data for Fig 4G

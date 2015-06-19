@@ -1,5 +1,5 @@
 function [rec_pos,pts]=uli_func(S,num_landmarks,dim)
-%This function does the ULI algorithm to reduce to 2 dimensions
+%This function does the ULI (unweighted landmark isomap) algorithm to reduce dimensions
 %The inputs are:
 %S- the similarity matrix
 %num_landmarks- the number of landmark points to use in the algorithm

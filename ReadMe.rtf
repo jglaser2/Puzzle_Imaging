@@ -1,0 +1,168 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww16240\viewh9980\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 A very brief description of the files is below. Further comments are found within the files.\
+\
+\
+
+\b\fs32 Voxel_Puzzling
+\b0 \
+
+\fs24 \
+
+\b vox_puzzling_main.m
+\b0 \
+	-This script does all of the voxel puzzling demonstrations from the manuscript (plotting and accuracy w/ different parameters)\
+	-Uses vox_puzzling_func.m\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf0 vox_puzzling_func.m
+\b0 \
+	-This is the main function for voxel puzzling, and does all the steps\
+	-Uses simulate_neur_and_vox.m, uli_func.m, sdm_func.m, rotate_match_func.m, scomponents.m\
+\
+
+\b simulate_neur_and_vox.m\
+\pard\pardeftab720
+
+\b0 \cf0 	-This function runs the basic simulation to determine where the voxels are, and which neurons are in which voxels.\
+	-Uses neur_per_vox_func.m\
+\
+
+\b neur_per_vox_func.m\
+
+\b0 	-For a vector of voxel sizes, says how many neurons there should be to completely fill the voxels. \
+	-Based off results of neurpervox.m\
+\
+
+\b neurpervox.m\
+
+\b0 	-Script that says how many neurons are necessary to fill a voxel\
+\
+
+\b plot_fig3.m\
+
+\b0 	-Script to make results plots in Figure 3\
+\
+
+\b Data_files\
+	
+\b0 -Contains the results used for plotting\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b\fs32 \cf0 Connectomics_Puzzling
+\fs24 \
+\
+conn_puzzling_main.m\
+	-
+\b0 This script will do all of the connectomics puzzling applications from the manuscript.\
+	-Uses conn_puzzling_func.m\
+\
+
+\b conn_puzzling_func.m\
+	-
+\b0 This is the main connectomics puzzling function\
+	-Uses simulate_neur_and_conn, simulate_neur_and_conn_layers, sdm_func.m, rotate_match_func.m, scomponents.m\
+\
+
+\b simulate_neur_and_conn.m\
+	
+\b0 -This function simulates neuron locations and the connections between neurons given a single connection probability function (a single layer)\
+
+\b \
+simulate_neur_and_conn_layers.m\
+	-
+\b0 This function simulates neuron locations and the connections between neurons given multiple connection probability functions (two layers)\
+\
+\pard\pardeftab720
+
+\b \cf0 plot_fig5.m\
+
+\b0 	-Script to make results plots in Figure 3\
+\
+
+\b Data_files\
+	
+\b0 -Contains the results used for plotting\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b\fs32 \cf0 Chemical_Puzzling
+\fs24 \
+\
+chem_puzzling_main.m\
+	-
+\b0 This script produces all the figure outputs for the chemical puzzling applications\
+	-Uses chem_puzzling_func.m\
+	-Uses the simulations produced from chem_sim.m\
+\
+
+\b chem_puzzling_func.m
+\b0 \
+	-This is the main function for chemical puzzling.\
+	-Uses uli_func.m, rotate_func_2d, scomponents.m\
+\
+
+\b chem_sim.m
+\b0 \
+	-This function does the chemical puzzling simulation that the results in the paper come from.\
+\pard\pardeftab720
+\cf0 	-Uses P3.jpg, the image representing the chemical concentration of the plate\
+\
+
+\b rotate_func_2d.m
+\b0 \
+	-This function rotates the reconstructed position and gives the sum squared error between this rotation and the true position. It works for 2 dimensional inputs.\
+\
+
+\b Data_files\
+	
+\b0 -Contains the simulation outputs\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \
+\
+
+\b\fs32 General_Files
+\b0\fs24 \
+\
+
+\b uli_func.m
+\b0 \
+	-This function does the ULI (unweighted landmark isomap) algorithm to reduce dimensions\
+\pard\pardeftab720
+\cf0 	-Uses dist_from_pt2.m\
+\
+
+\b dist_from_pt2.m
+\b0 \
+	-This function outputs the geodesic distance of all points to a given landmark point\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf0 sdm_func.m
+\b0 \
+	-This function does the SDM (sparse diffusion maps) algorithm to reduce dimensions\
+\
+
+\b rotate_match_func.m
+\b0 \
+	-This function finds the rotation (and potential reflection) to best match the reconstructed position to the true position. \
+	-Uses rotate_func.m\
+\
+
+\b rotate_func.m
+\b0 \
+	-This function rotates the reconstructed position and gives the sum squared error between this rotation and the true position.\
+\
+
+\b scomponents.m\
+
+\b0 	-Finds the connected components of a graph\
+	-Uses sparse_to_csr.m}

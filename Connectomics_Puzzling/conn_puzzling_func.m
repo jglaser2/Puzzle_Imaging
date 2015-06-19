@@ -1,20 +1,21 @@
 function [ r2_vec, err_mean, removed ] = conn_puzzling_func( x,y,z,scale,plot_flag,p33,p22,p23 )
 %This is the main connectomics puzzling function
 
-%This function takes as input the number of neurons that fit going in the
-%x,y,and z directions (x, y, and z), and the probability distribution of
-%connections as a function of distance between neurons (p33)
+%This function takes as input:
+%-the number of neurons that fit going in the x,y,and z directions (x, y, and z)
+%-how far apart the neurons are from each other in um (scale)
+%-probability distributions of connections as a function of distance between neurons (p33, p22, p23 - see next comment)
+%-whether to plot (plot_flag)
 
-%If there are multiple layers, then there can be three probability
+%If there is one layer, there is one probability distribution (p33)
+%If there are two layers, then there can be three probability
 %distributions: p33 and p22 (probability functions w/in the two layers) and
-%p23 (probability function between the two layer)
+%p23 (probability function between the two layers).
 
-%As output, it gives the correlation between the true and reconstructed
-%pairwise distances between neurons (r2_vec), the average distance error
-%between the true and reconstructed neuron locations (err_mean), and the
-%number of neurons that needed to be excluded because they were not
-%connected to the main connected component of the similarity matrix
-%(removed).
+%As output, it gives:
+%-the correlation between the true and reconstructed pairwise distances between neurons (r2_vec)
+%-the average distance error between the true and reconstructed neuron locations (err_mean)
+%-the number of neurons that needed to be excluded because they were not connected to the main connected component of the similarity matrix (removed).
 
 narginchk(6,8);
 
