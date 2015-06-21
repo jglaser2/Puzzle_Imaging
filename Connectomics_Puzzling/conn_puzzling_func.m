@@ -106,7 +106,7 @@ if plot_flag
     colors_xy = [.6*ones(size(xVal)),xVal,yVal];
     %Plot the reconstructed neuron positions
     figure; scatter3(rec_pos_trans(:,1),rec_pos_trans(:,2),rec_pos_trans(:,3),[],colors_xy,'fill','LineWidth',1)
-    title('Reconstructed Voxel Positions')
+    title('Reconstructed Neuron Positions')
     
     
     % Plot a slice through the reconstructed neuron positions
@@ -115,7 +115,7 @@ if plot_flag
         figure; scatter3(rec_pos_trans(idx,1),rec_pos_trans(idx,2),rec_pos_trans(idx,3),[],colors_xy(idx,:),'fill','LineWidth',1)
     end
     set(gca,'Visible','off')
-    title('Reconstructed Voxel Positions Slice')
+    title('Reconstructed Neuron Positions Slice')
     
     
     

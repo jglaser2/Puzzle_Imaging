@@ -3,7 +3,7 @@ function [ r2, err_mean, removed ] = vox_puzzling_func(x,y,z,vox_size,num_vox_re
 %individual sections)
 
 
-num_vox=x*y*z; %number of voxels
+num_vox=round(x*y*z); %number of voxels
 
 %% Simulate
 

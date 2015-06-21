@@ -11,13 +11,12 @@
 
 %IF PLOT_FIG=0, THEN THIS CALCULATES THE RECONSTRUCTION ACCURACY FOR LAYER 3(DATA FOR FIGS 4C AND D)
 %IF PLOT_FIG=1, THEN THIS PLOTS AN EXAMPLE RECONSTRUCTION OF LAYER 3 (FIG 4A)
-plot_fig=0; 
+plot_fig=1; 
 
-
-%GET DATA FOR FIGS 4C,D FOR LAYER 3
-if ~plot_fig
-
-reps=3; %200
+x=20; %Number of neurons that fit across simulation in x-dimension
+y=20; %Number of neurons that fit across simulation in y-dimension
+z=20; %Number of neurons that fit across simulation in z-dimension
+scale=20; %distance between neurons
 
 %Layer 3-->3 params (see manuscript)
 x0_33=5.705;
@@ -26,14 +25,15 @@ w_33=296.7;
 A_33=270;
 p33 = @(x) p0_33+A_33/w_33/sqrt(pi/2)*exp(-2*(x-x0_33).^2/w_33^2);
 
+
+%GET DATA FOR FIGS 4C,D FOR LAYER 3
+if ~plot_fig
+
+reps=200;
+
 r2_vec=zeros(reps,1); %Vector keeping track of r-values between true and reconstructed pairwise distances between neurons
 err_mean_vec=zeros(reps,1); %Vector keeping track of mean distance errors of the reconstruction
 removed=zeros(reps,1); %Vector keeping track of how many neurons needed to be excluded because they weren't part of the main connected component
-
-x=20; %Number of neurons that fit across simulation in x-dimension
-y=20; %Number of neurons that fit across simulation in y-dimension
-z=20; %Number of neurons that fit across simulation in z-dimension
-scale=20; %distance between neurons
 
 for rep=1:reps
     
@@ -56,12 +56,10 @@ end
 %IF PLOT_FIG=1, THEN THIS PLOTS AN EXAMPLE RECONSTRUCTION OF LAYERS 2 AND 3 (FIG 4B)
 plot_fig=0; 
 
-
-%GET DATA FOR FIGS 4C,D FOR LAYERS 2 AND 3
-if ~plot_fig
-    
-reps=3; %200
-
+x=20; %Number of neurons that fit across simulation in x-dimension
+y=20; %Number of neurons that fit across simulation in y-dimension
+z=20; %Number of neurons that fit across simulation in z-dimension
+scale=20; %distance between neurons
 
 %Layer 3-->3 params
 x0_33=5.705;
@@ -84,18 +82,19 @@ w_23=620.8;
 A_23=987.1;
 p23 = @(x) p0_23+A_23/w_23/sqrt(pi/2)*exp(-2*(x-x0_23).^2/w_23^2);
 
+
+%GET DATA FOR FIGS 4C,D FOR LAYERS 2 AND 3
+if ~plot_fig
+    
+reps=2; %200
+
 r2_vec=zeros(reps,1); %Vector keeping track of r-values between true and reconstructed pairwise distances between neurons
 err_mean_vec=zeros(reps,1); %Vector keeping track of mean distance errors of the reconstruction
 removed=zeros(reps,1); %Vector keeping track of how many neurons needed to be excluded because they weren't part of the main connected component
 
-x=20; %Number of neurons that fit across simulation in x-dimension
-y=20; %Number of neurons that fit across simulation in y-dimension
-z=20; %Number of neurons that fit across simulation in z-dimension
-scale=20; %distance between neurons
-
 for rep=1:reps
     
-    [ r2_vec(rep), err_mean_vec(rep), removed(rep) ] = conn_puzzling_func( x,y,z,0,scale,p33,p22,p23 );
+    [ r2_vec(rep), err_mean_vec(rep), removed(rep) ] = conn_puzzling_func( x,y,z,scale,0,p33,p22,p23 );
     
 end
 
